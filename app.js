@@ -19,6 +19,18 @@ app.get('/', (req, res) => {
   res.render('index', { ip, horaAtual });
 });
 
+
+app.get('/rotaautomatica', (req, res) => {
+  // Obter o endereço IP do servidor
+  const ip = "Github Action é muito legal 👍"
+
+  // Obter a hora atual do servidor
+  const horaAtual = "Fui criado automaticamente"
+
+  // Renderizar a página ejs com as informações
+  res.render('index', { ip, horaAtual });
+});
+
 // Função para obter o endereço IP do servidor
 function getIpAddress() {
   const interfaces = os.networkInterfaces();
@@ -36,3 +48,4 @@ function getIpAddress() {
 app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`);
 });
+
